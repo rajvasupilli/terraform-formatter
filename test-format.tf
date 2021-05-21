@@ -6,7 +6,6 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
   hash_key       = "UserId"
   range_key      = "GameTitle"
 
-
   attribute {
   name = "UserId"
     type   = "S"
