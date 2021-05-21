@@ -1,3 +1,22 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+
+  backend "remote" {
+    organization = "brambles"
+    
+    workspaces {
+      name = "gh-actions-demo"
+    }
+  }
+}
+
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
   name       = "GameScor"
   billing_mode    = "PROVISIONED"
